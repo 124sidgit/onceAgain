@@ -1,13 +1,15 @@
 
 import random
 
-# hello hello hella helli k=4
+# hello my name is sid k=4
 #   x     y     frequency
-# hell    o        2
-# ello    _        2
-# llo_    h        2
+# hell    o        1
+# ello    _        1
+# llo_    m        1
+# lo_m    y        1
+# o_my    _        1
 
-
+# to generate table of words
 def generateTable(data, k=4):
 
     T = {}
@@ -26,7 +28,7 @@ def generateTable(data, k=4):
     return T
 
 T = generateTable("hello hello hella helli")
-#print(T)
+print(T)
 
 def convertFreqintoProb(T):
     for kx in T.keys():
@@ -79,5 +81,5 @@ def generateText(starting_sent, T, k=4, maxlen=100):
     return sentence
 
 cc = generateText("politics", model, k=4, maxlen=100)
-print(cc)
+#print(cc)
 
