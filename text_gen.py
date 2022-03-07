@@ -28,8 +28,9 @@ def generateTable(data, k=4):
     return T
 
 T = generateTable("hello hello hella helli")
-print(T)
+#print(T)
 
+# to convert freqency of words coming after 4 words into probability
 def convertFreqintoProb(T):
     for kx in T.keys():
         s = sum(T[kx].values())
@@ -40,14 +41,14 @@ def convertFreqintoProb(T):
 T = convertFreqintoProb(T)
 #print(T)
 
-# Read our Data
+# Read the Data written in the file
 def load_text(filepath):
     with open(filepath) as f:
         return f.read().lower()
 text = load_text('speech.txt')
 #print(text)
 
-# Train our Markov Chains
+# Creating Train Markov Chains
 def trainMarkovChain(text, k=4):
     T = generateTable(text, k)
     T = convertFreqintoProb(T)
